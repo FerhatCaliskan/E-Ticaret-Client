@@ -1,18 +1,18 @@
 <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4">
-        <form>
-            <div class="mb-3">
-                <label for="username" class="form-label">Kullanıcı Adı</label>
-                <input #txtUsernameOrEmail type="text" f class="form-control" id="username" placeholder="Kullanıcı Adı & Email">
-                <div class="form-text invalid-feedback">Kullanıcıadı boş geçilemez</div>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Şifre</label>
-                <input #txtPassword type="password" class="form-control" id="password" placeholder="Şifre">
-            </div>
-            <button type="submit" class="btn btn-primary"(click)="login(txtUsernameOrEmail.value,txtPassword.value)" >Giriş Yap</button>
-        </form>
+        <div class="mb-3">
+            <label for="username" class="form-label">Kullanıcı Adı</label>
+            <input #txtUsernameOrEmail type="text" f class="form-control" id="username"
+                placeholder="Kullanıcı Adı & Email">
+            <div class="form-text invalid-feedback">Kullanıcıadı boş geçilemez</div>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Şifre</label>
+            <input #txtPassword type="password" class="form-control" id="password" placeholder="Şifre">
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="login(txtUsernameOrEmail.value,txtPassword.value)">Giriş
+            Yap</button>
     </div>
     <div class="col-md-4"></div>
 </div>
