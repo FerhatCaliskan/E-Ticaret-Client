@@ -24,7 +24,7 @@ export class DashboardComponent extends BaseComponent implements OnInit {
     this.signalRService.on(ReceiveFunctions.ProductAddedMessageReceiveFunction, message => {
       this.alertify.message(message, {
         messageType: MessageType.Success,
-        position: Position.TopLeft
+        position: Position.TopRight
       })
     })
   }
