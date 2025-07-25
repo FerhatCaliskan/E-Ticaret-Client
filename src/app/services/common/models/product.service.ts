@@ -6,7 +6,6 @@ import { List_Product } from 'src/app/contracts/list_product';
 import { firstValueFrom, Observable } from 'rxjs';
 import { List_Product_Image } from 'src/app/contracts/list_product_image';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -70,6 +69,16 @@ export class ProductService {
       queryString: `imageId= ${imageId}`
     }, id)
     await firstValueFrom(deleteObservable);
+    successCallBack();
+  }
+
+  async changeShowcaseImage(imageId: string, productId: string, successCallBack?: () => void): Promise<void> {
+    const changeShowcaseImageObservable = this.httpClientService.get({
+      controller: "products",
+      action: "ChangeShowcaseImage",
+      queryString: `imageId=${imageId}&productId=${productId}`
+    });
+    await firstValueFrom(changeShowcaseImageObservable);
     successCallBack();
   }
 }
