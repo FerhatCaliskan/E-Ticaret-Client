@@ -16,9 +16,6 @@
               <a class="nav-link active" aria-current="page" routerLink="products">Ürünler </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" routerLink="basket">Sepet</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link active" aria-current="page" routerLink="login"
                 *ngIf="!authService.isAuthenticated">Giriş Yap</a>
             </li>
@@ -56,6 +53,10 @@
             <input class="form-control me-2" type="search" placeholder="Ara" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Ara</button>
           </form> -->
+          <div class="d-flex">
+            <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
+              (click)="loadComponent()" type="submit">Sepet</button>
+          </div>
         </div>
       </div>
     </nav>
@@ -74,12 +75,10 @@
 <ngx-spinner size="default" name="s3" type="ball-atom"></ngx-spinner>
 
 
+<!-- <app-baskets></app-baskets>  -->
 
-<!-- <ngx-spinner
-  bdColor="rgba(51,51,51,0.8)"
-  size="medium"
-  color="#fff"
-  type="ball-scale-multiple"
->
-  <p style="font-size: 20px; color: white">Loading...</p>
-</ngx-spinner> -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <ng-template appDynamicLoadComponent></ng-template>
+  </div>
+</div>
