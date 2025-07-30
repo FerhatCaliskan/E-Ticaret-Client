@@ -10,14 +10,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { DialogModule } from 'src/app/dialogs/dialog.module';
-import { FileUploadModule } from 'src/app/services/common/file-upload/file-upload.module';
+import { DeleteDirectiveModule } from 'src/app/directives/admin/delete.directive.module';
+
 
 
 
 @NgModule({
   declarations: [
     OrderComponent,
-    ListComponent
+    ListComponent,
   ],
   imports: [
     CommonModule,
@@ -26,7 +27,7 @@ import { FileUploadModule } from 'src/app/services/common/file-upload/file-uploa
     ]),
     MatSidenavModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatTableModule, MatPaginatorModule,
     DialogModule,
-    FileUploadModule
+    DeleteDirectiveModule
   ]
 })
 export class OrderModule { }

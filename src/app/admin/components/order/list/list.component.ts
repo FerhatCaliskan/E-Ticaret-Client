@@ -39,6 +39,10 @@ export class ListComponent extends BaseComponent implements OnInit {
     this.paginator.length = allOrders.totalOrderCount;
   }
 
+  deleteOrders(){
+    
+  }
+
   async pageChanged() {
     await this.getOrders()
   }

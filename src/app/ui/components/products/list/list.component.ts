@@ -95,7 +95,7 @@ export class ListComponent extends BaseComponent implements OnInit {
     this.hideSpinner(SpinnerType.BallAtom);
     this.toastrService.message("Ürün sepete eklenmiştir.", "Sepete Eklendi", {
       messageType: ToastrMessageType.Success,
-      position: ToastrPosition.TopRight
+      position: ToastrPosition.BottomRight
     });
   }
 }
