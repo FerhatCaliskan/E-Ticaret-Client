@@ -5,11 +5,13 @@ import { HomeModule } from './home/home.module';
 import { ProductsModule } from './products/products.module';
 import { RegisterModule } from './register/register.module';
 import { LoginModule } from './login/login.module';
+import { PasswordResetComponent } from './password-reset/password-reset.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     CommonModule,
     BasketsModule,

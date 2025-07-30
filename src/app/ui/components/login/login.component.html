@@ -14,12 +14,14 @@
 
         <asl-google-signin-button></asl-google-signin-button>
         <br />
-        <img src="../../assets/facebook.png" style="width: 30px; height: 30px; cursor: pointer;" (click)="facebookLogin()" />
+        <img src="../../assets/facebook.png" style="width: 30px; height: 30px; cursor: pointer;"
+            (click)="facebookLogin()" />
 
         <br /><br />
 
         <button type="submit" class="btn btn-primary" (click)="login(txtUsernameOrEmail.value,txtPassword.value)">Giriş
             Yap</button>
+        <a style="margin-left: 5px;" routerLink="" class="btn btn-secondary">Şifremi Unuttum</a>
     </div>
     <div class="col-md-4"></div>
 </div>
