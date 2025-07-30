@@ -1,0 +1,54 @@
+<h2 mat-dialog-title>Sipariş Detayı</h2>
+<mat-dialog-content class="mat-typography">
+   
+    <mat-toolbar class="mat-elevation-z8" color="primary">
+        <span>Sipariş No: {{singleOrder.orderCode}}</span>
+    </mat-toolbar>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 order-detail-table">
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Ürün Adı</th>
+            <td mat-cell *matCellDef="let element">{{element.name}}</td>
+        </ng-container>
+
+        <!-- Price Column -->
+        <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef>Fiyat</th>
+            <td mat-cell *matCellDef="let element">{{element.price |currency:'₺'}}</td>
+        </ng-container>
+
+        <!-- Quantity Column -->
+        <ng-container matColumnDef="quantity">
+            <th mat-header-cell *matHeaderCellDef>Adet</th>
+            <td mat-cell *matCellDef="let element">{{element.quantity}}</td>
+        </ng-container>
+
+        <!-- Total Price Column -->
+        <ng-container matColumnDef="totalPrice">
+            <th mat-header-cell *matHeaderCellDef>Toplam Fiyat</th>
+            <td mat-cell *matCellDef="let element">{{(element.price * element.quantity) | currency:'₺'}}</td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row (click)="clickedRows.add(row)" [class.order-detail-row-is-clicked]="clickedRows.has(row)"
+            *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-toolbar class="mat-elevation-z8 dynamic-toolbar" color="primary">
+        <span class="toolbar-spacer"></span>
+        <div class="toolbar-info">
+            <small>Toplam Sipariş Tutarı : {{ totalPrice | currency:'₺' }}</small>
+            <small style="font-weight: normal; font-size: 15px;">Adres : {{ singleOrder.address }}</small>
+            <small style="font-weight: normal; font-size: 15px;">Açıklama : {{ singleOrder.description }}</small>
+        </div>
+    </mat-toolbar>
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-raised-button color="primary" [mat-dialog-close]="data">Siparişi Tamamla</button>
+    <button mat-button mat-dialog-close cdkFocusInitial>Kapat</button>
+</mat-dialog-actions>
