@@ -9,6 +9,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <div class="d-flex">
+              <a routerLink="admin" class="btn btn-primary" type="submit" *ngIf="authService.isAuthenticated">Yönetim
+                Paneli</a>
+            </div>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" routerLink="">Anasayfa</a>
             </li>
@@ -22,14 +26,6 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" routerLink="register"
                 *ngIf="!authService.isAuthenticated">Kayıt Ol</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" style="color: red; cursor: pointer;" (click)="signOut()"
-                *ngIf="authService.isAuthenticated">Çıkış Yap</a>
-            </li>
-            <li>
-              <a routerLink="admin" class="btn btn-outline-success" type="submit"
-                *ngIf="authService.isAuthenticated">Yönetim Paneli</a>
             </li>
             <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
@@ -54,8 +50,11 @@
             <button class="btn btn-outline-success" type="submit">Ara</button>
           </form> -->
           <div class="d-flex">
-            <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#basketModal"
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basketModal"
               (click)="loadComponent()" type="submit">Sepet</button>
+          </div>
+          <div class="d-flex" style="margin-left: 5px;">
+            <button class="btn btn-danger" (click)="signOut()" *ngIf="authService.isAuthenticated">Çıkış Yap</button>
           </div>
         </div>
       </div>

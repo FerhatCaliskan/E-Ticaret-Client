@@ -8,7 +8,7 @@
         <div class="card-body">
             <h2 class="card-title">{{product.name}}</h2>
             <p class="card-text">Fiyat: {{product.price|currency:'₺'}} <br /> Stok: {{product.stock}}</p>
-            <a class="btn btn-success" (click)="addToBasket(product)">Sepete Ekle</a>
+            <a class="btn btn-primary rounded-pill shadow" (click)="addToBasket(product)">Sepete Ekle</a>
         </div>
     </div>
 </div>
