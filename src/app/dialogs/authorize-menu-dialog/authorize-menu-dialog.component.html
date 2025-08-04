@@ -1,7 +1,14 @@
-<h1 mat-dialog-title>Rol Atanacak Endpoint: {{data.name}}</h1>
+<h1 mat-dialog-title matBadge=" {{shoes.selectedOptions.selected.length}}">Rol Atanacak Endpoint: {{data.name}}</h1>
 <div mat-dialog-content>
     <p>Bu endpointe yetki rol atamak istiyor musunuz?</p>
 </div>
+
+<mat-selection-list #shoes>
+    <mat-list-option *ngFor="let shoe of typesOfShoes">
+        {{shoe}}
+    </mat-list-option>
+</mat-selection-list>
+
 <div mat-dialog-actions>
     <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Evet</button>
     <button mat-button (click)="close()">İptal </button>

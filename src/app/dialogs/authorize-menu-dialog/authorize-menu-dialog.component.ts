@@ -14,6 +14,11 @@ export class AuthorizeMenuDialogComponent extends BaseDialog<AuthorizeMenuDialog
 
     super(dialogRef)
   }
+ 
+  typesOfShoes: string[] = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
+
+
+  
 }
 
 export enum AuthorizeMenuState {

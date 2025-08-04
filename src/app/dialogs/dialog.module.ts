@@ -12,9 +12,11 @@ import { BasketItemRemoveDialogComponent } from './basket-item-remove-dialog/bas
 import { ShoppingCompleteDialogComponent } from './shopping-complete-dialog/shopping-complete-dialog.component';
 import { OrderDetailDialogComponent } from './order-detail-dialog/order-detail-dialog.component';
 import { MatTableModule } from '@angular/material/table';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { CompleteOrderDialogComponent } from './complete-order-dialog/complete-order-dialog.component';
 import { AuthorizeMenuDialogComponent } from './authorize-menu-dialog/authorize-menu-dialog.component';
+import { MatListModule } from '@angular/material/list';
+import { MatBadgeModule } from '@angular/material/badge';
 
 
 @NgModule({
@@ -29,7 +31,7 @@ import { AuthorizeMenuDialogComponent } from './authorize-menu-dialog/authorize-
   ],
   imports: [
     CommonModule,
-    MatDialogModule, MatButtonModule, MatCardModule, MatTableModule,MatToolbarModule,
+    MatDialogModule, MatButtonModule, MatCardModule, MatTableModule, MatToolbarModule, MatListModule, MatBadgeModule,
     FileUploadModule,
     FormsModule,
   ]

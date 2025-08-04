@@ -5,8 +5,6 @@ import { RouterModule } from '@angular/router';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-import {MatBadgeModule} from '@angular/material/badge';
-
 
 
 @NgModule({
@@ -18,7 +16,7 @@ import {MatBadgeModule} from '@angular/material/badge';
     RouterModule.forChild([
       { path: "", component: AuthorizeMenuComponent }
     ]),
-    MatTreeModule,MatIconModule,MatButtonModule,MatBadgeModule
+    MatTreeModule,MatIconModule,MatButtonModule,
   ]
 })
 export class AuthorizeMenuModule { }
