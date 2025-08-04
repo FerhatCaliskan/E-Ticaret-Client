@@ -16,7 +16,7 @@ export class ShoppingCompleteDialogComponent extends BaseDialog<ShoppingComplete
 
     super(dialogRef)
   }
-  show: boolean;
+  show: boolean = false;
   complete() {
     this.show = true;
   }
