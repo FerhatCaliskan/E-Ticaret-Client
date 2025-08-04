@@ -1,9 +1,9 @@
 <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
     <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
         <button mat-icon-button disabled></button>
-        <button mat-button style="color:rgb(13, 110, 253)" (click)="assignRole(node.code, node.name)">Rol Ata</button>
+        <button mat-button color="primary" (click)="assignRole(node.code, node.name)">Rol Ata</button>
         {{node.name}}
-        <div matBadge="4" matBadgeOverlap="false" matBadgeColor="accent" style="margin-bottom: 20px;"></div>
+        <div matBadge="4" matBadgeOverlap="false" matBadgeColor="primary" style="margin-bottom: 20px;"></div>
     </mat-tree-node>
     <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
         <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name">

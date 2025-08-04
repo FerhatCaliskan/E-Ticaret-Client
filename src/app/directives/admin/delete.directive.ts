@@ -7,7 +7,6 @@ import { DeleteDialogComponent, DeleteState } from 'src/app/dialogs/delete-dialo
 import { AlertifyService, MessageType, Position } from 'src/app/services/admin/alertify.service';
 import { DialogService } from 'src/app/services/common/dialog.service';
 import { HttpClientService } from 'src/app/services/common/http-client.service';
-import { ProductService } from 'src/app/services/common/models/product.service';
 
 declare var $: any;
 
@@ -54,10 +53,10 @@ export class DeleteDirective {
             height: "toggle"
           }, 700, () => {
             this.callback.emit();
-            this.alertifyService.message("Ürün başarıyla silindi", {
+            this.alertifyService.message(`${this.controller == 'roles' ? 'Rol' : 'Ürün'} başarıyla silindi`, {
               dismissOthers: true,
               messageType: MessageType.Success,
-              position: Position.TopRight
+              position: Position.TopCenter
             })
           });
         }, (errorResponse: HttpErrorResponse) => {
