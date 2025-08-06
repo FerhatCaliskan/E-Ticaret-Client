@@ -24,7 +24,6 @@ export class HttpErrorHandlerInterceptorService implements HttpInterceptor {
         case HttpStatusCode.Unauthorized:
 
           this.userAuthService.refreshTokenLogin(localStorage.getItem("refreshToken"), (state) => {
-            debugger;
             if (!state) {
               const url = this.router.url;
               if (url == "/products")
@@ -39,7 +38,10 @@ export class HttpErrorHandlerInterceptorService implements HttpInterceptor {
                 });
             }
           }).then(data => {
-
+            this.toastrService.message("Bu işlemi yapmaya yetkiniz bulunmamaktadır!", "Yetkisiz işlem!", {
+              messageType: ToastrMessageType.Warning,
+              position: ToastrPosition.BottomFullWidth
+            });
           })
           break;
         case HttpStatusCode.InternalServerError:
