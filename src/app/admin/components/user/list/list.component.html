@@ -17,9 +17,17 @@
         </ng-container>
 
         <ng-container matColumnDef="twoFactorEnabled">
-            <th mat-header-cell *matHeaderCellDef> Çift Faktörlü Doğrulama </th>
+            <th mat-header-cell *matHeaderCellDef > Çift Faktörlü Doğrulama </th>
             <td mat-cell *matCellDef="let element">
-               <img *ngIf="element.twoFactorEnabled" [src]="'../../../../../assets/complete.png'" width="25" height="25">
+                <img *ngIf="element.twoFactorEnabled" [src]="'../../../../../assets/complete.png'" width="25"
+                    height="25" style="margin-left: 1.3cm;">
+            </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="role">
+            <th mat-header-cell *matHeaderCellDef style="padding-left: 25px;" ></th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-button color="primary" (click)="assignRole(element.id)">Rol Ata</button>
             </td>
         </ng-container>
 
